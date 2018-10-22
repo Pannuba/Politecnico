@@ -3,8 +3,8 @@
 #define LUNG_MAX_FRASE 60
 #define LUNG_MAX_PAROLA 15
 #define NUM_MAX_PAROLE 10
-#define TERMINATORE_FRASE '.'
-#define SEPARATORE_PAROLE ' '
+#define TERMINATORE_FRASE ' '	/* scanf prende ' ' come enter */
+#define SEPARATORE_PAROLE '_'
 
 int main(){
 	
@@ -26,7 +26,7 @@ int main(){
 	
 	tipoElencoParole elencoParole;
 	int indiceCorrParola, indiceCorrFrase, indiceCorrElemento;
-	printf("Inserire una frase terminata da un punto ( '.' ): ");
+	printf("Inserire una frase terminata da un punto '.': ");
 	scanf("%s", frase);
 	elencoParole.num_elementi = 0;
 	indiceCorrFrase = 0;
