@@ -1,0 +1,4 @@
+elencoOriginale					elencoCompresso
+1234567234589[10][11][12]..		1234567-689[10][11][12]...
+
+in elencoOriginale 2345 compare 2 volte. Tutte le vole che trovo un guppo di quattro interi che è gia comparso, lo sostituisco con un negativo chiamato riferimaento

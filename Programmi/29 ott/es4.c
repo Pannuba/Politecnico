@@ -31,7 +31,7 @@ void printArray(char *tipo, int tot, int array[])
 int main(){
 	
 	int i, max_numeri;
-	printf("Quanti numeri del cazzo vuoi mettere? ");
+	printf("Quanti numeri vuoi mettere? ");
 	scanf("%d", &max_numeri);
 	
 	typedef struct {
