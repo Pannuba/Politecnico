@@ -17,7 +17,7 @@ void bubbleSort(float array[])		/* array[] o array[1000]? Fare confronto */
 	for (i = 0; i < 999; i++)
 	
 	{		
-		while (j = 999; j > i; j--)
+		for (j = 999; j > i; j--)
 		
 		{
 			if (array[j] < array[j-1])

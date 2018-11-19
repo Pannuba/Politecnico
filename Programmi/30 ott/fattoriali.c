@@ -61,7 +61,7 @@ void incrementa(int *prrt, int m)
 	
 	{
 		*prrt++;
-		incrementa(prr, m - 1);
+		incrementa(prrt, m - 1);
 	}
 }
 
