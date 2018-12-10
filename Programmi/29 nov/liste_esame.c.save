@@ -1,0 +1,26 @@
+void EliminaCentrale(ElemLista **ppTesta)	/* Riceve in ingresso un puntatore e non il valore effettivo per la possibile eliminazione del primo elemento */
+{
+	ElemLista *pCentrale, *pDaEliminare;
+	int ContaPassi;
+	ElemLista **ppPunta_a_da_Elem;
+	
+	if (*ppTesta == NULL)
+		return;
+	else
+	{
+		pCorrente = (*ppTesta)->pProssimo;
+		ContaPassi = 1;
+		ppPuntDaElim = ppTesta;
+	}
+	
+	while (pCorrente != NULL)
+	{
+		if (ContaPassi == -1)
+			ppPuntDaElem = &((*ppPuntDaElem)->pProssimo);
+		
+		ContaPassi *= -1;
+		pCorrente = pCorrente->pProssimo;
+	}
+			}
+
+/* Chiamata in main: EliminaCentrale(&pTesta) */
