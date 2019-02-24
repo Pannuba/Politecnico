@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_DIM 12
+#define LONG_MAX 9223372036854775807
+#define MAX_DIM 24
 #define DEBUG
 
 /* Passare le variabili per indirizzo risparmia memoria */
@@ -16,23 +17,25 @@ typedef struct
 	int Dim;
 } Matrice;
 
+Matrice CalcolaMinore(Matrice, int, int);
+
 double CalcolaDet(Matrice MatrDaElab)
 {
-	int ContEl, int ComplAlg;
+	int ContEl, ComplAlg;
 	Matrice MatrRidotta;
 	double Determinante;
 
 	if (1 == MatrDaElab.Dim)
-		Determniante = MatrDaElab.Dati[0][0];
+		Determinante = MatrDaElab.Dati[0][0];
 	else
 	{
 		Determinante = 0;
-		ComplAlg = 1
+		ComplAlg = 1;
 
 		for (ContEl = 0; ContEl < MatrDaElab.Dim; ++ContEl)
 		{
 			MatrRidotta = CalcolaMinore(MatrDaElab, 0, ContEl);
-			Determinante += ComplAlg * MatrDaElab[0][ContEl] * CalcolaDet(MatrRidotta);
+			Determinante = Determinante + (ComplAlg * MatrDaElab.Dati[0][ContEl] * CalcolaDet(MatrRidotta));
 			ComplAlg = ComplAlg - ComplAlg - ComplAlg;
 		}
 	}
@@ -43,7 +46,7 @@ double CalcolaDet(Matrice MatrDaElab)
 // Record di attivazione: 1->11 (prima istanza ne attiva 11). Ciascuna di queste ne attiva 10 e così via
 // Record di attivazione 11! spazio occupato = 11 * 600 byte solo per la matrice + interi + matrice ridotta 400 == 1KB quindi 11! KB
 
-Matrice CalcolaMinore(Matrice MatriceOrig, int RigaDaElim, int ColDaElim)
+Matrice CalcolaMinore(Matrice MatrOrig, int RigaDaElim, int ColDaElim)
 {
 	int ROrig, COrig, RRid, CRid;
 	Matrice MatrRid;
@@ -72,16 +75,28 @@ Matrice CalcolaMinore(Matrice MatriceOrig, int RigaDaElim, int ColDaElim)
 	return MatrRid;
 }
 
-void LeggiMatrice(Matrice *pMatrDaLegg)		// Matrice LeggiMatrice()
+//void LeggiMatrice(Matrice *pMatrDaLegg)		// Matrice LeggiMatrice()0
 
-void StampaMatrice(Matrice MatrDaStamp)
+/*void StampaMatrice(Matrice MatrDaStamp)
 {
 
-}
+}*/
 
 int main()
 {
-	int matrice[MAX_RIGHE][MAX_COLONNE];
-	scanf
+	int i, j;
+	Matrice mat;
+	double det;
+	
+	for (i = 0; i < MAX_DIM; i++)
+	{
+		for (j = 0; j < MAX_DIM; j++)
+		{
+			mat.Dati[i][j] = 2;
+			printf("%f ", mat.Dati[i][j]);
+		}
+	}
+	det = CalcolaDet(mat);
+	printf("\n\nIL DETERMINANTNEAN %f", det);
 	return 0;
 }
